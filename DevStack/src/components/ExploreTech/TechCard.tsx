@@ -5,7 +5,6 @@ interface TechCardProps {
   selected: boolean;
   onSelect: (id: number) => void;
 }
-
 const TechCard = ({
   tech,
   selected,
@@ -13,33 +12,28 @@ const TechCard = ({
 }: TechCardProps) => {
   return (
     <div className="rounded-xl border border-gray-200 p-5 container mx-auto">
-      
       <img
         src={tech.image}
         alt={tech.name}
         className="h-12 w-12 object-contain"
       />
-
       <div className="mt-4">
-        <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold">
-            {tech.name}
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-bold">
+              {tech.name}
+            </h3>
 
-          <span className="rounded-full bg-gray-100 px-2 py-1 text-xs">
-            {tech.badge}
-          </span>
-        </div>
-
+            <span className="rounded-full bg-gray-100 px-2 py-1 text-xs">
+              {tech.badge}
+            </span>
+          </div>
         <p className="mt-2 text-sm text-gray-500">
           {tech.description}
         </p>
-
-        <div className="mt-4 flex justify-between text-sm">
-          <span>{tech.category}</span>
-          <span>⭐ {tech.rating}</span>
-        </div>
-
+          <div className="mt-4 flex justify-between text-sm">
+            <span>{tech.category}</span>
+            <span>⭐ {tech.rating}</span>
+          </div>
         <button
           onClick={() => onSelect(tech.id)}
           disabled={selected}

@@ -1,7 +1,10 @@
 import { useState } from "react";
+
 import { techData } from "../../data/techData";
+
 import TechCard from "./TechCard";
 import StackCard from "./StackCard";
+
 const ExploreTech = () => {
   const [selectedTech, setSelectedTech] = useState<number[]>([]);
 
@@ -10,9 +13,11 @@ const ExploreTech = () => {
 
     setSelectedTech([...selectedTech, id]);
   };
+
   const handleClearAll = () => {
     setSelectedTech([]);
   };
+
   const selectedTechnologies = techData.filter((tech) =>
     selectedTech.includes(tech.id)
   );
@@ -29,18 +34,17 @@ const ExploreTech = () => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-          <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
-
-            <div className="grid grid-cols-3 gap-5 lg:col-span-3">
-              {techData.map((tech) => (
-                <TechCard
-                  key={tech.id}
-                  tech={tech}
-                  selected={selectedTech.includes(tech.id)}
-                  onSelect={handleSelect}
-                />
-              ))}
-            </div>
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
+          <div className="grid grid-cols-3 gap-5 lg:col-span-3">
+            {techData.map((tech) => (
+              <TechCard
+                key={tech.id}
+                tech={tech}
+                selected={selectedTech.includes(tech.id)}
+                onSelect={handleSelect}
+              />
+            ))}
+          </div>
         <StackCard
           selectedTechnologies={selectedTechnologies}
           onClearAll={handleClearAll}
