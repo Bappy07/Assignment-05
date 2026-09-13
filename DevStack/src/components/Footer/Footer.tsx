@@ -3,19 +3,19 @@ import logo from "../../assets/logo-text.png";
 const Footer = () => {
     return (
 <footer className="footer sm:footer-horizontal bg-white text-black  p-10 container mx-auto ">
-        <aside>
-            <img src={logo} alt="" />
-            <p>
-            Curated tools, technologies, and resources for developers building
-            <br />
-            modern software.
-            </p>
-            <div className="flex gap-x-2 list-none text-gray-950">
-                <li>GitHub</li>
-                <li>Twitter</li>
-                <li>LinkedIn</li>
-            </div>
-        </aside>
+            <aside>
+                <img src={logo} alt="" />
+                <p>
+                Curated tools, technologies, and resources for developers building
+                <br />
+                modern software.
+                </p>
+                <div className="flex gap-x-2 list-none text-gray-950">
+                    <li>GitHub</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                </div>
+            </aside>
             <nav>
                 <h6 className="footer-title">PRODUCT</h6>
                 <a className="link link-hover">Home</a>
